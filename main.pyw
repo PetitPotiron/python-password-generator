@@ -38,7 +38,13 @@ def site():
     else:
         messagebox.showinfo("Annulation", "Vous ne serez pas redirigé vers le site internet.")
 
-
+def credits():
+    question = messagebox.askokcancel("Redirection", "Vous allez être redirigé vers un site internet.")
+    if question:
+        webbrowser.open_new("https://www.freepik.com/icon/bot_3135458")
+    else:
+        messagebox.showinfo("Annulation", "Vous ne serez pas redirigé vers le site internet.")
+        
 def save_password():
     if not password_entry.get() == "":
         with open("passwords.txt", "a") as file:
@@ -109,12 +115,14 @@ password_menu.add_command(label="Enregistrer le mot de passe dans le fichier pas
 password_menu.add_command(label="Quitter", command=window.quit)
 menu_bar.add_cascade(label="Fichier", menu=password_menu)
 contact_menu = Menu(menu_bar, tearoff=0)
+contact_menu.add_command(label="Icon by Freepik", command=credits)
 contact_menu.add_command(label="Me rendre sur le site internet", command=site)
-menu_bar.add_cascade(label="Contact", menu=contact_menu)
+menu_bar.add_cascade(label="Other", menu=contact_menu)
 
 # configurer notre fenêtre pour ajouter ce menu_bar
 window.config(menu=menu_bar)
 
 # afficher la fenêtre
 window.mainloop()
+
 

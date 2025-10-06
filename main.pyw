@@ -62,7 +62,7 @@ def save_password():
 window = Tk()
 window.title("Générateur de mot de passe")
 window.geometry("1080x720")
-window.iconbitmap("icon.ico")
+# window.iconbitmap("icon.ico") # this does not work anymore.
 window.minsize(width="625", height="500")
 window.config(background="#4065A4")
 
@@ -117,3 +117,4 @@ window.config(menu=menu_bar)
 
 # afficher la fenêtre
 window.mainloop()
+
